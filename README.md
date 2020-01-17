@@ -7,3 +7,4 @@ Allows user to select:
    - upper case;
    - lower case;
    - symbols
+   - numbers
