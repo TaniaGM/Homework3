@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Password Generator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Password Generator</h1>
+        <br>
+        <p><strong>Choose the type of password you want to generate. You can choose the length (between 8 - 128) and
+                type of characters</p>
+        </strong></p>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row"></div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8"></div>
+        <h5 style="text-align: center;">Include uppercase characters?</h5>
+        <div class="col-sm-2"></div>
+    </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row"></div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8"></div>
+        <h5 style="text-align: center;">Include lowercase characters?</h5>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row"></div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8"></div>
+        <h5 style="text-align: center;">Include numbers?</h5>
+        <div class="col-sm-2"></div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row"></div>
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8"></div>
+        <h5 style="text-align: center;">Include special characters?</h5>
+        <div class="col-sm-2"></div>
+    </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="text-align:center;"><button type="button" onclick=pwdGen()>
+                Click me to generate a password.</button></div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="text-align:center;">
+            <br>
+            Here is your password:
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <br>
+            <h3 style="text-align:center;" id="pwd"></h3>
+
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8" style="text-align:center;">
+            <br>
+            <p>Click on the button to copy the text to your clipboard. </p>
+            <input style="text-align:center;" type="text" id="newpwd">
+            <button onclick="copyText()">Copy text</button>
+
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <p>TGMB &copy; 2020</p>
+</div>
+
+</body>
+
+</html>
