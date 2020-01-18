@@ -1,8 +1,23 @@
+//Creating DOM files for html
+
+const resultEl = document.getElementById('result');
+const lengthEl = document.getElementById('length');
+const uppercasetEl = document.getElementById('uppercase');
+const lowercasetEl = document.getElementById('lowercase');
+const numberstEl = document.getElementById('numbers');
+const symboltEl = document.getElementById('symbol');
+const generatetEl = document.getElementById('generate');
+const clipboardEl = document.getElementById('clipboard');
+const randomCollection = { lower: getRandomLower, upper: getRandomUpper, number: getRandomNumber, symbol: getRandomSymbol }
+
+
 // Grabbing upper and lower case letters from character set
 
-function getRandomUpper() {
+function getRandomUpper() {}
+
     return String.fromCharCode(Math.floor(math.Random()) *26 + 65)
 }
+ console.log(String.fromCharCode(97));
 
 function getRandomLower(){
     return String.fromCharCode(Math.floor(math.Random()) *26 + 97);
@@ -17,20 +32,14 @@ function getRandomSymbol(){
     return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-//Creating DOM files for html
 
-const resultEl = document.getElementById('result');
-const lengthEl = document.getElementById('length');
-const uppercasetEl = document.getElementById('uppercase');
-const lowercasetEl = document.getElementById('lowercase');
-const numberstEl = document.getElementById('numbers');
-const symboltEl = document.getElementById('symbol');
-const generatetEl = document.getElementById('generate');
-const clipboardEl = document.getElementById('clipboard');
-const randomCollection = {lower: getRandomLower, upper: getRandomUpper, number: getRandomNumber, symbol: getRandomSymbol}
 
 //adding Event Listeners
 
+
+
+
+/*
 clipboardEl.addEventListener('click', () => {
     const genpwd = document.createElement('genpwd');
     const password = resultEl.innerText;
@@ -43,6 +52,7 @@ clipboardEl.addEventListener('click', () => {
     genpwd.remove();
     alert('Password copied to clipboard');
 });
+
 
 generatetEl.addEventListener('click',() => {
     const length = +lengthEl.value;
@@ -66,3 +76,15 @@ function generatePassword(lower, upper, number, symbol, length) {
     
     }
 }
+//looping
+for(let i=0; i<length; +=typesCount) {
+    typesArr.forEach(type => {
+        const randomCollection = Object.keys(type)[0];
+        generatedPassword += randomCollection[randomCollection]
+        ();
+    })
+}
+const finalPassword = generatedPassword.slice(0,length);
+return finalPassword;
+}
+*/
