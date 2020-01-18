@@ -15,13 +15,17 @@ function getRandomNumber(){
 function getRandomSymbol(){
     const symbols = '!@#$%^&*()_+{}|:<>?-=[]\;,./'
     return symbols[Math.floor(Math.random() * symbols.length)];
-}ß
+}
+
+//Creating DOM files for html
 
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('length');
 const uppercasetEl = document.getElementById('uppercase');
 const lowercasetEl = document.getElementById('lowercase');
 const numberstEl = document.getElementById('numbers');
-const resultEl = document.getElementById('result');
-const resultEl = document.getElementById('result');
-const resultEl = document.getElementById('result');
+const symboltEl = document.getElementById('symbol');
+const generatetEl = document.getElementById('generate');
+const clipboardEl = document.getElementById('clipboard');
+const randomCollection = {lower: getRandomLower, upper: getRandomUpper, number: getRandomNumber, symbol: getRandomSymbol}
+
