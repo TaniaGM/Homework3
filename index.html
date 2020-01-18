@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
     <style>
 
     </style>
@@ -19,7 +20,7 @@
     <div class="jumbotron text-center" style="margin-bottom:0">
         <h1>Password Generator</h1>
         <br>
-        <p><strong>Choose the type of password you want to generate.</p>
+        <p><strong>Choose the type of password you want to generate</p>
         </strong></p>
     </div>
 <br>
@@ -35,12 +36,14 @@
     <input type="number" id="length" min='8' max='128' value=''/></h6>
 </div>
 -->
+
+
 <div class="container-fluid">
     <div class="row"></div>
     <div class="col-sm-2"></div>
     <div class="col-sm-8"></div>
     <h6 style="text-align: center;">Length of password (between 8 - 128):
-    <input type = "number" id="length" value= '12' /></h6>
+    <input type = "number" id="length" value= '' /></h6>
 </div>
 
 
@@ -73,7 +76,7 @@
         <div class="row"></div>
         <div class="col-sm-2"></div>
         <div class="col-sm-8"></div>
-        <h6 style="text-align: center;">Special characters? <input type="checkbox" id="special" checked /></h6>
+        <h6 style="text-align: center;">Special characters? <input type="checkbox" id="symbols" checked /></h6>
         <div class="col-sm-2"></div>
         </div>
     </div>
@@ -84,20 +87,40 @@
 
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-8" style="text-align:center;"><button type="button" onclick=pwdGen()>
-                Generate a password</button></div>
+        <div class="col-sm-8" style="text-align:center;"><button type="button" 
+            onclick=textarea()>Click to generate a password</button></div>
         <div class="col-sm-2"></div>
-    </div>
     <br>
-
-    <!--Generated password coding-->
-
+    <br>
+    <!--
+    <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-8" style="text-align:center;">
-        <div class="result"></div>
-            Here is your password:
-        </div>
+        <div class="col-sm-8" style="text-align:center;">Here is your password:</div>
+        <div class="result"><id="result"></id></div>
+        <div class="col-sm-2"></div>
+    </div>
+-->
+<div class="result-container">
+    <span id="result"></span>
+    <button class="btn" id="clipboard">
+        <i class="far fa-clipboard"></i>
+    </button>
+</div>
+
+
+
+<!-- this is messy 
+    
+    <div class="container-fluid">
+        <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8"></div>
+        <h6 style="text-align:center;"> Here is your password:
+        <button class="btn" id="clipboard">
+        <i class="far fa-clipboard"></i>
+        </button>
+
         <div class="col-sm-2"></div>
     </div>
     <div class="row">
@@ -114,22 +137,14 @@
         <div class="col-sm-8" style="text-align:center;">
             <br>
             <p>Copy password to clipboard. </p>
-            <input style="text-align:center;" type="text" id="genpwd">
+            <input style="text-align:center;" type="text" id="pwdGen">
             <button onclick="copyText()">Copy text</button>
 
         </div>
         <div class="col-sm-2"></div>
     </div>
+-->
 
-
-    </div>
-
-<script src="script.js"></script>
-</body>
-</html>
-<div class="jumbotron text-center" style="margin-bottom:0">
-    <p>TGMB &copy; 2020</p>
-</div>
 
 </body>
 
