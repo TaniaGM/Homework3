@@ -32,15 +32,15 @@ const randomCollection = {lower: getRandomLower, upper: getRandomUpper, number: 
 //adding Event Listeners
 
 clipboardEl.addEventListener('click', () => {
-    const textarea = document.createElement('textarea');
+    const genpwd = document.createElement('genpwd');
     const password = resultEl.innerText;
     if(!password) { return; }
 
-    textarea.value=password;
-    document.body.appendChild(textarea);
-    textarea.select();
+    genpwd.value=password;
+    document.body.appendChild(genpwd);
+    genpwd.select();
     document.execCommand('copy');
-    textarea.remove();
+    genpwd.remove();
     alert('Password copied to clipboard');
 });
 
@@ -54,3 +54,15 @@ generatetEl.addEventListener('click',() => {
     resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 });
 
+//adding function codes
+
+function generatePassword(lower, upper, number, symbol, length) {
+    let generatedPassword = '';
+    const typesCount = lower + upper + number + symbol;
+    const typesArr = [lower, upper, number, symbol].filter(item =>Object.values(item)[0]);
+
+    if(typesCount === 0) {
+        return '';
+    
+    }
+}
