@@ -2,13 +2,13 @@
 
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('length');
-const uppercasetEl = document.getElementById('uppercase');
-const lowercasetEl = document.getElementById('lowercase');
-const numberstEl = document.getElementById('numbers');
-const symboltEl = document.getElementById('symbols');
-const generatetEl = document.getElementById('generate');
+const uppercaseEl = document.getElementById('uppercase');
+const lowercaseEl = document.getElementById('lowercase');
+const numbersEl = document.getElementById('numbers');
+const symbolsEl = document.getElementById('symbols');
+const generateEl = document.getElementById('generate');
 const clipboardEl = document.getElementById('clipboard');
-const funcName = { 
+const randomFunc = { 
     lower: getRandomLower, 
     upper: getRandomUpper, 
     number: getRandomNumber, 
@@ -23,8 +23,9 @@ generate.addEventListener('click', () => {
     const hasNumber = numbersEl.checked;
     const hasSymbol = symbolsEl.checked;
 
-    resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
+    resultEl.innerText = generatePassword(hasUpper, hasLower, hasNumber, hasSymbol, length);
 });
+
 
 clipboard.addEventListener('click', () => {
     const textarea = document.createElement('textarea');
@@ -51,33 +52,39 @@ function generatePassword(upper, lower, number, symbol, length) {
         return '';
     
     }
-}
-//looping
-for(let i=0; i<length; i+=typesCount) {
-    typesArr.forEach(type => {
+
+    for(let i=0; i<length; i+=typesCount) {
+        typesArr.forEach(type => {
         const funcName = Object.keys(type)[0];
-        generatedPassword += funcName[funcName]();
+        generatedPassword += randomFunc[funcName]();
     });
 
-}
-/*const finalPassword = generatedPassword.slice(0,length);
-return finalPassword;
-}
-*/
-
-// Grabbing upper and lower case letters from character set (http://www.net-comber.com/charset.html)
-
-function getRandomUpper() {}
-    return String.fromCharCode(Math.floor(Math.random()) *26 + 65);
-}
+    }
  
+console.log(generatedPassword);
+    const finalPassword = generatedPassword.slice(0,length);
+    console.log(finalPassword);
+    return finalPassword;
 
-function getRandomLower(){}
-    return String.fromCharCode(Math.floor(Math.random()) *26 + 97);
+}
+
+
+//setting cases for generated password (upper, lower, numbers, symbols)
+
+function getRandomUpper() {
+    const Uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    return Uppercase[Math.floor(Math.random() * Uppercase.length)];
+
+}
+ function getRandomLower(){
+     const Lowercase = 'abcdefghijklmnopqrstuvwxyz'
+    return Lowercase[Math.floor(Math.random() * Lowercase.length)];
+
 }
 
 function getRandomNumber(){
-    return +String.fromCharCode(Math.floor(Math.random()) *10 +  48);
+    const Numbers = '0123456789'
+    return Numbers[Math.floor(Math.random() * Numbers.length)];
 }
 
 function getRandomSymbol(){
