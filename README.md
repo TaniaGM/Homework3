@@ -12,3 +12,7 @@ User can select a password containing 1 - 4 of the following elements.  If they 
 Password is displayed within the screen based on user's selection.
    
 User can elect to copy password to clipboard.  An alert pops up confirming password copied to clipboard.
+
+Screenshot of completed project can be found under README (Issues) tab, or by clicking the link here https://github.com/TaniaGM/Homework3/issues/1
+
+Link to deployed site: https://taniagm.github.io/Homework3/
