@@ -23,7 +23,12 @@ generate.addEventListener('click', () => {
     const hasNumber = numbersEl.checked;
     const hasSymbol = symbolsEl.checked;
 
-    resultEl.innerText = generatePassword(hasUpper, hasLower, hasNumber, hasSymbol, length);
+    if (isNaN(length) || length < 8 || length > 128) {
+        window.alert("Requested password length not within guidelines!");
+    }
+    else {
+
+    resultEl.innerText = generatePassword(hasUpper, hasLower, hasNumber, hasSymbol, length);}
 });
 
 
@@ -49,6 +54,7 @@ function generatePassword(upper, lower, number, symbol, length) {
     const typesArr = [{upper}, {lower}, {number}, {symbol}].filter(item =>Object.values(item)[0]);
 
     if(typesCount === 0) {
+        window.alert("You must select at least one element to construct the password!");
         return '';
     
     }
